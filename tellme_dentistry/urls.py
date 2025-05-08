@@ -16,8 +16,9 @@ Including another URLconf
 """
 # Djangoプロジェクト全体のURLの定義(エンドポイント定義)
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('dent.urls')),  # dentアプリのURLを追加
 ]

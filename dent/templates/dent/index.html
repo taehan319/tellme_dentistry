@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歯科医院情報サイト</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'dent/css/style.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>歯科医院情報サイト</h1>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h2>ようこそ</h2>
+        <p>このサイトでは歯科医院についての情報を提供しています。</p>
+        <p>続けるには合言葉を入力してください。</p>
+      </section>
+
+      <section class="auth-form">
+        <form action="{% url 'dent:authenticate' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="passphrase">合言葉:</label>
+            <input type="text" id="passphrase" name="passphrase" required>
+          </div>
+          <button type="submit">確認</button>
+        </form>
+
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <p class="message {{ message.tags }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 歯科医院情報サイト</p>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歯科情報 - 歯科医院情報サイト</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'dent/css/style.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>歯科情報ページ</h1>
+    </header>
+
+    <main>
+      <section class="dental-info">
+        <h2>歯科医院について</h2>
+        <p>認証に成功しました！ここでは歯科医院に関する様々な情報を提供しています。</p>
+
+        <div class="info-section">
+          <h3>診療時間</h3>
+          <table class="schedule">
+            <tr>
+              <th>平日</th>
+              <td>9:00 - 18:00</td>
+            </tr>
+            <tr>
+              <th>土曜</th>
+              <td>9:00 - 13:00</td>
+            </tr>
+            <tr>
+              <th>休診日</th>
+              <td>日曜・祝日</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="info-section">
+          <h3>診療内容</h3>
+          <ul>
+            <li>一般歯科</li>
+            <li>小児歯科</li>
+            <li>歯周病治療</li>
+            <li>入れ歯・義歯</li>
+            <li>予防歯科</li>
+          </ul>
+        </div>
+      </section>
+
+      <a href="{% url 'dent:index' %}" class="btn-back">トップページに戻る</a>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 歯科医院情報サイト</p>
+    </footer>
+  </div>
+</body>
+
+</html>
