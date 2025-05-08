@@ -13,30 +13,22 @@ body {
 }
 
 .container {
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
 /* ヘッダー */
-header {
-  background-color: #4682b4;
-  /* スチールブルー */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 30px;
-  border-radius: 5px;
+header img {
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
 }
 
 /* メインコンテンツ */
-main {
-  background-color: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 section {
   margin-bottom: 30px;
 }
@@ -53,25 +45,33 @@ h3 {
   margin: 15px 0;
 }
 
-/* フォーム */
-.form-group {
-  margin-bottom: 20px;
+/* 共通クラス */
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-j-left {
+  justify-content: flex-start;
+}
+.flex-j-right {
+  justify-content: flex-end;
+}
+.flex-j-center {
+  justify-content: center;
+}
+.flex-j-around {
+  justify-content: space-around;
+}
+.flex-j-between {
+  justify-content: space-between;
+}
+.nowrap {
+  white-space: nowrap;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
+/* ボタン基本 */
 button {
   background-color: #4682b4;
   color: white;
@@ -87,21 +87,13 @@ button:hover {
   background-color: #3a6d8f;
 }
 
-/* メッセージ */
-.messages {
-  margin-top: 20px;
+/* 送信ボタン */
+button.submitButton {
+  width: 100%;
 }
 
-.message {
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.error {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ef9a9a;
+button.submitButton:hover {
+  background-color: #3a6d8f;
 }
 
 /* 情報セクション */
@@ -153,9 +145,13 @@ li {
 
 /* フッター */
 footer {
+  width: 100%;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   margin-top: 30px;
-  color: #777;
+  color: #ffffff;
   font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4682b4;
 }
