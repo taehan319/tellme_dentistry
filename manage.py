@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Djangoプロジェクトに対する操作を行うための様々なコマンドラインが定義されているファイル．
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
